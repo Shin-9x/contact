@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#fbfbf9">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#fbfbf9"/>
+<circle cx="600" cy="400" r="150" fill="none" stroke="#0b8ecf" stroke-width="46"/>
+<circle cx="600" cy="400" r="34" fill="#b6cc4e"/>
+<rect x="760" y="250" width="46" height="300" rx="23" fill="#e0479a"/>
+</svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root { --accent: #0b8ecf; --ink: #12161a; --paper: #fbfbf9; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Schibsted Grotesk", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: var(--accent); }
+::selection { background: #b6cc4e; color: #12161a; }
+[data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+[data-reveal].is-in { opacity: 1; transform: none; }
+input, textarea, button { font: inherit; color: inherit; }
+</style>
+</helmet>
+
+<div style="max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px);">
+
+  <header style="position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 10px 28px; flex-wrap: wrap; padding: 14px 0; background: rgba(251,251,249,.88); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(18,22,26,.08);">
+    <a href="#top" style="display: flex; align-items: center; gap: 12px;">
+      <img src="logo-contact.png" alt="Contact SRL" style="width: 40px; height: 40px; object-fit: contain; display: block;" />
+      <span style="display: flex; flex-direction: column; line-height: 1;">
+        <span style="font-size: 19px; font-weight: 700; letter-spacing: -.02em;">CONTACT</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: rgba(18,22,26,.5); margin-top: 4px;" data-i18n-en="Promotional agency">Agenzia promozionale</span>
+      </span>
+    </a>
+    <nav style="display: flex; align-items: center; flex-wrap: wrap; gap: 12px 26px; font-size: 14.5px;">
+      <a href="#azienda" data-i18n-en="Company">Azienda</a>
+      <a href="#soluzioni" data-i18n-en="Solutions">Soluzioni</a>
+      <a href="#metodo" data-i18n-en="Method">Metodo</a>
+      <a href="#percorsi" data-i18n-en="Work with us">Lavora con noi</a>
+      <a href="#contatti" data-i18n-en="Contact">Contatti</a>
+    </nav>
+    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px;">
+      <button onClick="{{ toggleLang }}" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; background: none; border: 1px solid rgba(18,22,26,.18); border-radius: 999px; padding: 8px 12px; cursor: pointer;" style-hover="border-color: var(--accent); color: var(--accent);">{{ langLabel }}</button>
+      <a href="tel:+390918433088" style="display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: #fbfbf9; border-radius: 999px; padding: 11px 20px; font-size: 14px; font-weight: 500;" style-hover="background: var(--accent); color: #fff;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: #b6cc4e; display: block;"></span>
+        <span>+39 091 8433088</span>
+      </a>
+    </div>
+  </header>
+
+  <section id="top" style="padding: clamp(56px, 9vw, 128px) 0 clamp(40px, 6vw, 88px);">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px 56px; align-items: flex-end;">
+      <div style="flex: 1 1 min(100%, 480px); min-width: 0;">
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: clamp(10px, 1.1vw, 11.5px); letter-spacing: .18em; text-transform: uppercase; color: rgba(18,22,26,.45); margin: 0 0 clamp(20px, 3vw, 36px);" data-i18n-en="Outbound call center — Carini, Palermo — since 2010">Call center outbound — Carini, Palermo — dal 2010</p>
+        <h1 style="margin: 0; max-width: 17ch; font-size: clamp(34px, 5.4vw, 76px); line-height: 1.0; letter-spacing: -.03em; font-weight: 500; text-wrap: balance;" data-i18n-en="Every call is a relationship. We take care of it.">Ogni chiamata è una relazione. Noi la curiamo.</h1>
+        <p style="margin: clamp(28px, 4vw, 44px) 0 0; max-width: 52ch; font-size: clamp(16.5px, 1.2vw, 19px); line-height: 1.5; color: rgba(18,22,26,.68); text-wrap: pretty;" data-i18n-en="Contact srl was founded in 2010, offering a service specialised in telemarketing. We build the voice that speaks to your customers: trained people, clear processes, measurable results.">Contact srl è un'azienda che nasce nel 2010, offrendo un servizio specializzato nel telemarketing. Costruiamo la voce che parla ai tuoi clienti: persone formate, processi chiari, risultati misurabili.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(32px, 4vw, 48px);">
+          <a href="#contatti" style="display: inline-flex; align-items: center; gap: 12px; background: var(--accent); color: #fff; border-radius: 999px; padding: 15px 26px; font-size: 15.5px; font-weight: 500;" style-hover="background: var(--ink);">
+            <span data-i18n-en="I'm a company">Sei un'azienda?</span>
+            <span style="font-family: 'JetBrains Mono', monospace;">→</span>
+          </a>
+          <a href="#percorsi" style="display: inline-flex; align-items: center; gap: 12px; border: 1px solid rgba(18,22,26,.2); border-radius: 999px; padding: 15px 26px; font-size: 15.5px;" style-hover="border-color: var(--ink); background: #fff;">
+            <span data-i18n-en="Work with us">Lavora con noi</span>
+          </a>
+        </div>
+      </div>
+      <dl style="margin: 0; flex: 1 1 220px; max-width: 320px; display: flex; flex-direction: column; gap: 26px; border-left: 1px solid rgba(18,22,26,.12); padding-left: 26px;">
+        <div>
+          <dt style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(18,22,26,.45);" data-i18n-en="Founded">Fondata</dt>
+          <dd style="margin: 8px 0 0; font-size: 30px; letter-spacing: -.02em;">2010</dd>
+        </div>
+        <div>
+          <dt style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(18,22,26,.45);" data-i18n-en="Specialisation">Specializzazione</dt>
+          <dd style="margin: 8px 0 0; font-size: 19px; line-height: 1.3;">Telemarketing</dd>
+        </div>
+        <div>
+          <dt style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(18,22,26,.45);" data-i18n-en="Headquarters">Sede</dt>
+          <dd style="margin: 8px 0 0; font-size: 19px; line-height: 1.3;">Carini (PA)</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section style="padding-bottom: clamp(48px, 7vw, 104px);">
+    <div style="position: relative; border-radius: 6px; overflow: hidden; background: repeating-linear-gradient(115deg, #eceae4 0 12px, #f6f5f1 12px 24px); aspect-ratio: 21 / 8; display: flex; align-items: flex-end; padding: 24px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(18,22,26,.5); background: #fbfbf9; padding: 7px 11px; border-radius: 3px;">foto sede / sala operatori — 2400×900</span>
+    </div>
+  </section>
+
+  <section id="azienda" style="padding: clamp(56px, 8vw, 112px) 0; border-top: 1px solid rgba(18,22,26,.1);">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 56px;">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(18,22,26,.45); flex: 0 0 auto; width: 200px;" data-i18n-en="01 — Company">01 — Azienda</p>
+      <div data-reveal="" style="flex: 1 1 min(100%, 420px); min-width: 0;">
+        <blockquote style="margin: 0; font-size: clamp(24px, 2.8vw, 38px); line-height: 1.14; letter-spacing: -.025em; font-weight: 500; max-width: 26ch; text-wrap: pretty;" data-i18n-en="The team is made up of supervisors and team leaders who live our work with passion and consistency every day.">Il team è formato da supervisor e team leader che ogni giorno vivono con passione e costanza il nostro lavoro.</blockquote>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-top: clamp(40px, 5vw, 64px); padding-top: 32px; border-top: 1px solid rgba(18,22,26,.1);">
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68);" data-i18n-en="Always attentive to our clients: each campaign has a dedicated supervisor and a shared quality standard.">Sempre attenti ai nostri clienti: ogni campagna ha un supervisor dedicato e uno standard di qualità condiviso.</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68);" data-i18n-en="Always up to date on market demands, with training that follows the product and the audience.">Sempre aggiornati sulle richieste del mercato, con una formazione che segue il prodotto e il pubblico.</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68);" data-i18n-en="Always competitive: technology, scripts and lists reviewed campaign after campaign.">Sempre competitivi: tecnologia, script e liste riviste campagna dopo campagna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="soluzioni" style="padding: clamp(56px, 8vw, 112px) 0; border-top: 1px solid rgba(18,22,26,.1);">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 56px;">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(18,22,26,.45); flex: 0 0 auto; width: 200px;" data-i18n-en="02 — Solutions">02 — Soluzioni</p>
+      <div style="flex: 1 1 min(100%, 420px); min-width: 0;">
+        <h2 style="margin: 0 0 clamp(36px, 5vw, 60px); font-size: clamp(28px, 3.4vw, 46px); line-height: 1.02; letter-spacing: -.03em; font-weight: 500; max-width: 22ch;" data-i18n-en="Four ways to reach your customer.">Quattro modi per arrivare al tuo cliente.</h2>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+          <li style="display: grid; grid-template-columns: 40px minmax(0, 1.1fr); gap: 10px 24px; align-items: start; padding: 26px 0; border-top: 1px solid rgba(18,22,26,.1);" style-hover="background: #fff;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent);">01</span>
+            <h3 style="margin: 0; font-size: clamp(20px, 2.1vw, 27px); letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Outbound telemarketing">Telemarketing outbound</h3>
+            <p style="margin: 0; grid-column: 2 / -1; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68);" data-i18n-en="Qualified lists, tested scripts, operators trained on your product. Daily reporting on contacts and outcomes.">Liste qualificate, script testati, operatori formati sul tuo prodotto. Reportistica quotidiana su contatti ed esiti.</p>
+          </li>
+          <li style="display: grid; grid-template-columns: 40px minmax(0, 1.1fr); gap: 10px 24px; align-items: start; padding: 26px 0; border-top: 1px solid rgba(18,22,26,.1);" style-hover="background: #fff;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent);">02</span>
+            <h3 style="margin: 0; font-size: clamp(20px, 2.1vw, 27px); letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Teleselling &amp; appointments">Teleselling e appuntamenti</h3>
+            <p style="margin: 0; grid-column: 2 / -1; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68);" data-i18n-en="From first contact to signed order or an appointment in the diary of your sales network.">Dal primo contatto all'ordine firmato o all'appuntamento in agenda per la tua rete vendita.</p>
+          </li>
+          <li style="display: grid; grid-template-columns: 40px minmax(0, 1.1fr); gap: 10px 24px; align-items: start; padding: 26px 0; border-top: 1px solid rgba(18,22,26,.1);" style-hover="background: #fff;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent);">03</span>
+            <h3 style="margin: 0; font-size: clamp(20px, 2.1vw, 27px); letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Customer care">Customer care</h3>
+            <p style="margin: 0; grid-column: 2 / -1; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68);" data-i18n-en="Inbound assistance, welcome calls and satisfaction surveys, with your tone of voice.">Assistenza inbound, welcome call e indagini di soddisfazione, con il tuo tono di voce.</p>
+          </li>
+          <li style="display: grid; grid-template-columns: 40px minmax(0, 1.1fr); gap: 10px 24px; align-items: start; padding: 26px 0; border-top: 1px solid rgba(18,22,26,.1); border-bottom: 1px solid rgba(18,22,26,.1);" style-hover="background: #fff;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent);">04</span>
+            <h3 style="margin: 0; font-size: clamp(20px, 2.1vw, 27px); letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Promotional campaigns">Campagne promozionali</h3>
+            <p style="margin: 0; grid-column: 2 / -1; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68);" data-i18n-en="Launches, activations and loyalty programmes coordinated with your marketing calendar.">Lanci, attivazioni e programmi fedeltà coordinati con il tuo calendario marketing.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" style="padding: clamp(56px, 8vw, 112px) 0; border-top: 1px solid rgba(18,22,26,.1);">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 56px;">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(18,22,26,.45); flex: 0 0 auto; width: 200px;" data-i18n-en="03 — Method">03 — Metodo</p>
+      <div style="flex: 1 1 min(100%, 420px); min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 36px 40px;">
+        <div data-reveal="">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(18,22,26,.45);">A.</span>
+          <h3 style="margin: 12px 0 10px; font-size: 22px; letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Briefing">Briefing</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.55; color: rgba(18,22,26,.66);" data-i18n-en="We study the product, the target and the objective. We agree on the KPIs before the first call.">Studiamo prodotto, target e obiettivo. Concordiamo i KPI prima della prima chiamata.</p>
+        </div>
+        <div data-reveal="">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(18,22,26,.45);">B.</span>
+          <h3 style="margin: 12px 0 10px; font-size: 22px; letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Training">Formazione</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.55; color: rgba(18,22,26,.66);" data-i18n-en="Operators and supervisors are trained on the script and on objections, then tested on a pilot batch.">Operatori e supervisor vengono formati su script e obiezioni, poi testati su un lotto pilota.</p>
+        </div>
+        <div data-reveal="">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(18,22,26,.45);">C.</span>
+          <h3 style="margin: 12px 0 10px; font-size: 22px; letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Campaign">Campagna</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.55; color: rgba(18,22,26,.66);" data-i18n-en="Daily monitoring, call listening and script corrections while the campaign is running.">Monitoraggio quotidiano, ascolto delle chiamate e correzioni allo script a campagna in corso.</p>
+        </div>
+        <div data-reveal="">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(18,22,26,.45);">D.</span>
+          <h3 style="margin: 12px 0 10px; font-size: 22px; letter-spacing: -.02em; font-weight: 500;" data-i18n-en="Reporting">Rendiconto</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.55; color: rgba(18,22,26,.66);" data-i18n-en="Contacts, conversions and quality shared in a readable report, with next steps.">Contatti, conversioni e qualità in un report leggibile, con le azioni successive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(48px, 7vw, 96px) 0; border-top: 1px solid rgba(18,22,26,.1);">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 56px; align-items: flex-start;">
+      <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(18,22,26,.45); flex: 0 0 auto; width: 200px;" data-i18n-en="In collaboration with">In collaborazione con</p>
+      <div style="flex: 1 1 min(100%, 420px); min-width: 0; display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center;">
+        <div style="height: 72px; width: 200px; border: 1px solid rgba(18,22,26,.14); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .1em; color: rgba(18,22,26,.45); text-transform: uppercase; flex: 0 0 200px;">logo partner</div>
+        <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: rgba(18,22,26,.7); max-width: 62ch;" data-i18n-en="A European brand synonymous with quality and loyalty. For over 30 years the largest player in home delivery of frozen specialities, and an international operation that shares our commitment to courteous, professional and responsible service.">Un marchio europeo sinonimo di qualità e fedeltà. Da oltre 30 anni la più grande realtà nella vendita diretta di specialità surgelate con consegna a domicilio, una realtà internazionale che condivide l'impegno dell'eccellenza qualitativa del prodotto e del servizio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="percorsi" style="padding: clamp(56px, 8vw, 112px) 0; border-top: 1px solid rgba(18,22,26,.1);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px;">
+      <div style="background: #12161a; color: #fbfbf9; border-radius: 8px; padding: clamp(28px, 3.5vw, 48px); display: flex; flex-direction: column; gap: 20px; min-height: 300px;">
+        <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(251,251,249,.5);" data-i18n-en="For companies">Per le aziende</p>
+        <h3 style="margin: 0; font-size: clamp(26px, 3vw, 38px); line-height: 1.05; letter-spacing: -.03em; font-weight: 500; max-width: 20ch;" data-i18n-en="Tell us the objective, we'll bring the voice.">Raccontaci l'obiettivo, la voce la portiamo noi.</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: rgba(251,251,249,.72); max-width: 40ch;" data-i18n-en="Send us the brief: within 48 hours you receive a proposal with volumes, timing and expected results.">Inviaci il brief: entro 48 ore ricevi una proposta con volumi, tempi e risultati attesi.</p>
+        <a href="#contatti" style="margin-top: auto; display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; background: #fbfbf9; color: #12161a; border-radius: 999px; padding: 13px 22px; font-size: 15px; font-weight: 500;" style-hover="background: #b6cc4e;">
+          <span data-i18n-en="Request a proposal">Richiedi una proposta</span>
+          <span style="font-family: 'JetBrains Mono', monospace;">→</span>
+        </a>
+      </div>
+      <div style="background: #fff; border: 1px solid rgba(18,22,26,.12); border-radius: 8px; padding: clamp(28px, 3.5vw, 48px); display: flex; flex-direction: column; gap: 20px; min-height: 300px;">
+        <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(18,22,26,.45);" data-i18n-en="Careers">Lavora con noi</p>
+        <h3 style="margin: 0; font-size: clamp(26px, 3vw, 38px); line-height: 1.05; letter-spacing: -.03em; font-weight: 500; max-width: 20ch;" data-i18n-en="We hire people who like to listen.">Cerchiamo persone a cui piace ascoltare.</h3>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: rgba(18,22,26,.68); max-width: 40ch;" data-i18n-en="Paid training, fixed shifts, a team of supervisors alongside you from day one. No experience required.">Formazione retribuita, turni fissi, un team di supervisor accanto a te dal primo giorno. Nessuna esperienza richiesta.</p>
+        <a href="#contatti" style="margin-top: auto; display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; border: 1px solid rgba(18,22,26,.2); border-radius: 999px; padding: 13px 22px; font-size: 15px; font-weight: 500;" style-hover="border-color: var(--ink); background: var(--paper);">
+          <span data-i18n-en="Send your CV">Invia la candidatura</span>
+          <span style="font-family: 'JetBrains Mono', monospace;">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" style="padding: clamp(56px, 8vw, 112px) 0; border-top: 1px solid rgba(18,22,26,.1);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: clamp(40px, 6vw, 88px); align-items: start;">
+      <div>
+        <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 52px); line-height: 1; letter-spacing: -.035em; font-weight: 500; max-width: 16ch;" data-i18n-en="Let's talk. On the phone, obviously.">Parliamone. Al telefono, ovviamente.</h2>
+        <dl style="margin: clamp(36px, 4vw, 56px) 0 0; display: grid; gap: 24px;">
+          <div style="display: grid; grid-template-columns: minmax(0, 130px) minmax(0, 1fr); gap: 4px 16px; padding-bottom: 20px; border-bottom: 1px solid rgba(18,22,26,.1);">
+            <dt style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(18,22,26,.45); padding-top: 5px;" data-i18n-en="Phone">Telefono</dt>
+            <dd style="margin: 0; font-size: 21px; letter-spacing: -.01em;"><a href="tel:+390918433088">+39 091 8433088</a></dd>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 130px) minmax(0, 1fr); gap: 4px 16px; padding-bottom: 20px; border-bottom: 1px solid rgba(18,22,26,.1);">
+            <dt style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(18,22,26,.45); padding-top: 5px;" data-i18n-en="Office">Sede</dt>
+            <dd style="margin: 0; font-size: 17px; line-height: 1.5;">Via Pio la Torre snc<br />90044 Carini (Palermo)</dd>
+          </div>
+          <div style="display: grid; grid-template-columns: minmax(0, 130px) minmax(0, 1fr); gap: 4px 16px;">
+            <dt style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(18,22,26,.45); padding-top: 5px;" data-i18n-en="Online">Online</dt>
+            <dd style="margin: 0; font-size: 17px; line-height: 1.6;"><a href="https://contactsrl.net">contactsrl.net</a><br /><a href="https://www.facebook.com/people/Contact-SRL/61554599708239/">Facebook</a></dd>
+          </div>
+        </dl>
+      </div>
+      <form onSubmit="{{ onSubmit }}" style="background: #fff; border: 1px solid rgba(18,22,26,.12); border-radius: 8px; padding: clamp(24px, 3vw, 40px); display: grid; gap: 20px;">
+        <div style="display: flex; gap: 8px;">
+          <button type="button" onClick="{{ pickAzienda }}" style="{{ tabAziendaStyle }}">Azienda</button>
+          <button type="button" onClick="{{ pickCandidato }}" style="{{ tabCandidatoStyle }}">Candidatura</button>
+        </div>
+        <label style="display: grid; gap: 8px; min-width: 0;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(18,22,26,.5);" data-i18n-en="Name and surname">Nome e cognome</span>
+          <input type="text" required="" style="border: 0; border-bottom: 1px solid rgba(18,22,26,.22); padding: 10px 0; font-size: 16.5px; background: transparent; outline: none; width: 100%; min-width: 0; box-sizing: border-box;" style-focus="border-bottom-color: var(--accent);" />
+        </label>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 20px;">
+          <label style="display: grid; gap: 8px; min-width: 0;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(18,22,26,.5);">Email</span>
+            <input type="email" required="" style="border: 0; border-bottom: 1px solid rgba(18,22,26,.22); padding: 10px 0; font-size: 16.5px; background: transparent; outline: none; width: 100%; min-width: 0; box-sizing: border-box;" style-focus="border-bottom-color: var(--accent);" />
+          </label>
+          <label style="display: grid; gap: 8px; min-width: 0;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(18,22,26,.5);" data-i18n-en="Phone">Telefono</span>
+            <input type="tel" style="border: 0; border-bottom: 1px solid rgba(18,22,26,.22); padding: 10px 0; font-size: 16.5px; background: transparent; outline: none; width: 100%; min-width: 0; box-sizing: border-box;" style-focus="border-bottom-color: var(--accent);" />
+          </label>
+        </div>
+        <label style="display: grid; gap: 8px; min-width: 0;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(18,22,26,.5);">{{ messageLabel }}</span>
+          <textarea rows="4" style="border: 1px solid rgba(18,22,26,.18); border-radius: 4px; padding: 12px; font-size: 16.5px; background: transparent; outline: none; resize: vertical; width: 100%; min-width: 0; box-sizing: border-box;" style-focus="border-color: var(--accent);"></textarea>
+        </label>
+        <button type="submit" style="justify-self: start; background: var(--ink); color: #fbfbf9; border: 0; border-radius: 999px; padding: 14px 26px; font-size: 15.5px; font-weight: 500; cursor: pointer;" style-hover="background: var(--accent);">{{ submitLabel }}</button>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: rgba(18,22,26,.5);" data-i18n-en="By sending you accept the processing of your data for the purpose of replying to your request.">Inviando accetti il trattamento dei dati per la sola finalità di risposta alla richiesta.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer style="padding: clamp(40px, 5vw, 64px) 0 40px; border-top: 1px solid rgba(18,22,26,.1); display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: end;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="logo-contact.png" alt="" style="width: 32px; height: 32px; object-fit: contain; display: block;" />
+      <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: rgba(18,22,26,.6);">© 2026 Contact SRL — Via Pio la Torre snc, 90044 Carini (Palermo)<br />P. IVA 06017960821</p>
+    </div>
+    <a href="#top" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(18,22,26,.5);" data-i18n-en="Back to top ↑">Torna su ↑</a>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;blu&quot;,&quot;magenta&quot;,&quot;lime&quot;,&quot;inchiostro&quot;],&quot;default&quot;:&quot;blu&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Identità&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contenuto&quot;}}">
+class Component extends DCLogic {
+  state = { lang: "it", form: "azienda" };
+
+  componentDidMount() {
+    this.setAccent();
+    if (this.props.lang === "en") this.setState({ lang: "en" }, () => this.applyLang("en"));
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); this.io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -12% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach((el) => this.io.observe(el));
+    this.fallback = setTimeout(() => document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-in")), 1600);
+  }
+
+  componentDidUpdate(prev) {
+    if (prev.accent !== this.props.accent) this.setAccent();
+  }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    clearTimeout(this.fallback);
+  }
+
+  setAccent() {
+    const map = { blu: "#0b8ecf", magenta: "#e0479a", lime: "#8fa62f", inchiostro: "#12161a" };
+    document.documentElement.style.setProperty("--accent", map[this.props.accent] || map.blu);
+  }
+
+  applyLang(lang) {
+    document.querySelectorAll("[data-i18n-en]").forEach((el) => {
+      if (!el.dataset.i18nIt) el.dataset.i18nIt = el.innerHTML;
+      el.innerHTML = lang === "en" ? el.dataset.i18nEn : el.dataset.i18nIt;
+    });
+    document.documentElement.lang = lang;
+  }
+
+  tab(active) {
+    return {
+      flex: "1 1 0", minWidth: 0, padding: "10px 14px", fontSize: "13.5px", cursor: "pointer", borderRadius: "999px",
+      border: active ? "1px solid transparent" : "1px solid rgba(18,22,26,.18)",
+      background: active ? "#12161a" : "transparent",
+      color: active ? "#fbfbf9" : "rgba(18,22,26,.7)",
+      transition: "background .2s, color .2s"
+    };
+  }
+
+  renderVals() {
+    const en = this.state.lang === "en";
+    const isAz = this.state.form === "azienda";
+    return {
+      langLabel: en ? "IT" : "EN",
+      toggleLang: () => {
+        const next = en ? "it" : "en";
+        this.setState({ lang: next }, () => this.applyLang(next));
+      },
+      pickAzienda: () => this.setState({ form: "azienda" }),
+      pickCandidato: () => this.setState({ form: "candidato" }),
+      tabAziendaStyle: this.tab(isAz),
+      tabCandidatoStyle: this.tab(!isAz),
+      messageLabel: isAz ? (en ? "Your objective" : "Il tuo obiettivo") : (en ? "Availability and notes" : "Disponibilità e note"),
+      submitLabel: isAz ? (en ? "Send the brief" : "Invia il brief") : (en ? "Send application" : "Invia candidatura"),
+      onSubmit: (e) => { e.preventDefault(); }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
