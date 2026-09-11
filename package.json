@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "node dev/contact-mock.mjs",
+    "dev:php": "php -S 127.0.0.1:8787 -t public",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/schibsted-grotesk": "^5.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

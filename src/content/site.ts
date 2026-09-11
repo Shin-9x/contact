@@ -249,19 +249,47 @@ export const form = {
       en: 'Availability and notes',
     } satisfies Localized,
   },
+  optional: { it: 'facoltativo', en: 'optional' } satisfies Localized,
+  consent: {
+    it: 'Acconsento al trattamento dei miei dati personali per ricevere una risposta a questa richiesta.',
+    en: 'I agree to my personal data being processed in order to receive a reply to this request.',
+  } satisfies Localized,
   submitBusiness: { it: 'Invia il brief', en: 'Send the brief' } satisfies Localized,
   submitCandidate: {
     it: 'Invia candidatura',
     en: 'Send application',
   } satisfies Localized,
   privacy: {
-    it: 'Inviando accetti il trattamento dei dati per la sola finalità di risposta alla richiesta.',
-    en: 'By sending you accept the processing of your data for the purpose of replying to your request.',
+    it: 'Trattiamo i dati solo per rispondere alla tua richiesta e non li cediamo a terzi.',
+    en: 'We use your data only to reply to your request and never share it with third parties.',
+  } satisfies Localized,
+  privacyLink: {
+    it: "Leggi l'informativa privacy.",
+    en: 'Read the privacy notice.',
   } satisfies Localized,
   sending: { it: 'Invio in corso…', en: 'Sending…' } satisfies Localized,
   success: {
     it: 'Grazie, abbiamo ricevuto la tua richiesta. Ti ricontattiamo al più presto.',
     en: 'Thank you, we have received your request. We will get back to you shortly.',
+  } satisfies Localized,
+  /** One message per validation code; the codes are shared with the PHP endpoint. */
+  issues: {
+    required: { it: 'Campo obbligatorio.', en: 'Required field.' } satisfies Localized,
+    invalidEmail: { it: 'Email non valida.', en: 'Invalid email address.' } satisfies Localized,
+    invalidPhone: { it: 'Numero non valido.', en: 'Invalid phone number.' } satisfies Localized,
+    tooLong: { it: 'Testo troppo lungo.', en: 'Text is too long.' } satisfies Localized,
+    consent: {
+      it: 'Consenso obbligatorio.',
+      en: 'Consent is required.',
+    } satisfies Localized,
+  },
+  invalid: {
+    it: 'Controlla i campi segnalati e riprova.',
+    en: 'Please check the highlighted fields and try again.',
+  } satisfies Localized,
+  rateLimited: {
+    it: 'Hai già inviato una richiesta da poco. Riprova più tardi o chiamaci allo ' + company.phone + '.',
+    en: 'You have just sent a request. Please try again later or call us on ' + company.phone + '.',
   } satisfies Localized,
   error: {
     it: "Non siamo riusciti a inviare la richiesta. Riprova o chiamaci allo " + company.phone + '.',
@@ -275,10 +303,12 @@ export const form = {
 
 export const footer = {
   backToTop: { it: 'Torna su ↑', en: 'Back to top ↑' } satisfies Localized,
+  privacy: { it: 'Informativa privacy', en: 'Privacy notice' } satisfies Localized,
 }
 
 /** Document metadata kept in sync with the active language. */
 export const meta = {
+  siteName: company.name,
   title: {
     it: 'Contact SRL — Call center outbound e telemarketing a Carini (Palermo)',
     en: 'Contact SRL — Outbound call center and telemarketing in Carini (Palermo)',

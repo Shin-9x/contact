@@ -1,9 +1,13 @@
 import markUrl from '../assets/logo/contact-mark.png'
 import { company, footer } from '../content/site'
+import { privacy } from '../content/privacy'
 import { useLanguage } from '../i18n/useLanguage'
 
-export function Footer() {
+export function Footer({ standalone = false }: { standalone?: boolean }) {
   const { t } = useLanguage()
+
+  const linkClasses =
+    'font-mono text-[11px] tracking-[.14em] text-ink/50 uppercase transition-colors duration-200 hover:text-accent'
 
   return (
     <footer className="flex flex-wrap items-end justify-between gap-6 border-t border-ink/10 pt-[clamp(40px,5vw,64px)] pb-10">
@@ -15,12 +19,14 @@ export function Footer() {
           {company.vat}
         </p>
       </div>
-      <a
-        href="#top"
-        className="font-mono text-[11px] tracking-[.14em] text-ink/50 uppercase transition-colors duration-200 hover:text-accent"
-      >
-        {t(footer.backToTop)}
-      </a>
+      <div className="flex flex-wrap items-center gap-x-7 gap-y-3">
+        <a href={standalone ? './' : './privacy.html'} className={linkClasses}>
+          {standalone ? t(privacy.backToSite) : t(footer.privacy)}
+        </a>
+        <a href="#top" className={linkClasses}>
+          {t(footer.backToTop)}
+        </a>
+      </div>
     </footer>
   )
 }

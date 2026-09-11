@@ -1,9 +1,11 @@
 import { ArrowGlyph, ButtonLink } from '../components/Button'
 import { hero } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
+import { useEnquiryType } from '../enquiry/useEnquiryType'
 
 export function Hero() {
   const { t } = useLanguage()
+  const { selectType } = useEnquiryType()
 
   return (
     <section id="top" className="pt-[clamp(56px,9vw,128px)] pb-[clamp(40px,6vw,88px)]">
@@ -19,7 +21,12 @@ export function Hero() {
             {t(hero.body)}
           </p>
           <div className="mt-[clamp(32px,4vw,48px)] flex flex-wrap gap-3">
-            <ButtonLink href="#contatti" variant="accent" size="lg">
+            <ButtonLink
+              href="#contatti"
+              onClick={() => selectType('business')}
+              variant="accent"
+              size="lg"
+            >
               <span>{t(hero.primaryCta)}</span>
               <ArrowGlyph />
             </ButtonLink>

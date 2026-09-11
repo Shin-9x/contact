@@ -8,8 +8,10 @@
   --color-lime: #b6cc4e;
   --color-magenta: #e0479a;
 
-  --font-sans: 'Schibsted Grotesk', Helvetica, Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Both names on purpose: the variable font packages register the "Variable"
+     family, the static ones the plain name. */
+  --font-sans: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius-frame: 6px;
   --radius-card: 8px;

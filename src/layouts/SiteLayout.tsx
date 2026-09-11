@@ -5,7 +5,13 @@ import { Footer } from './Footer'
 import { ui } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
 
-export function SiteLayout({ children }: { children: ReactNode }) {
+interface SiteLayoutProps {
+  children: ReactNode
+  /** True on pages other than the home, where menu anchors have to leave the page. */
+  standalone?: boolean
+}
+
+export function SiteLayout({ children, standalone = false }: SiteLayoutProps) {
   const { t } = useLanguage()
 
   return (
@@ -16,9 +22,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       >
         {t(ui.skipToContent)}
       </a>
-      <Header />
+      <Header standalone={standalone} />
       <main>{children}</main>
-      <Footer />
+      <Footer standalone={standalone} />
     </Container>
   )
 }

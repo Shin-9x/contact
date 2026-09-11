@@ -2,9 +2,11 @@ import { ArrowGlyph, ButtonLink } from '../components/Button'
 import { Section } from '../components/Section'
 import { paths } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
+import { useEnquiryType } from '../enquiry/useEnquiryType'
 
 export function Paths() {
   const { t } = useLanguage()
+  const { selectType } = useEnquiryType()
 
   return (
     <Section id="percorsi" className="py-[clamp(56px,8vw,112px)]">
@@ -19,7 +21,13 @@ export function Paths() {
           <p className="max-w-[40ch] text-[16px] leading-[1.55] text-paper/72">
             {t(paths.business.body)}
           </p>
-          <ButtonLink href="#contatti" variant="paper" size="sm" className="mt-auto self-start">
+          <ButtonLink
+            href="#contatti"
+            onClick={() => selectType('business')}
+            variant="paper"
+            size="sm"
+            className="mt-auto self-start"
+          >
             <span>{t(paths.business.cta)}</span>
             <ArrowGlyph />
           </ButtonLink>
@@ -36,7 +44,8 @@ export function Paths() {
             {t(paths.careers.body)}
           </p>
           <ButtonLink
-            href="#contatti"
+            href="#candidatura"
+            onClick={() => selectType('candidate')}
             variant="outlineOnWhite"
             size="sm"
             className="mt-auto self-start"

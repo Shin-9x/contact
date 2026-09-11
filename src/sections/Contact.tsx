@@ -14,6 +14,8 @@ export function Contact() {
 
   return (
     <Section id="contatti" className="py-[clamp(56px,8vw,112px)]" labelledBy="contatti-title">
+      {/* Second anchor of the same section: opens the form on the application tab. */}
+      <span id="candidatura" aria-hidden="true" className="block" />
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] items-start gap-[clamp(40px,6vw,88px)]">
         <div>
           <h2

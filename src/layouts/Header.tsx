@@ -5,8 +5,11 @@ import { LanguageToggle } from '../components/LanguageToggle'
 import { navigation, ui } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
 
-export function Header() {
+/** `standalone` prefixes every anchor with the home page, for pages other than the home. */
+export function Header({ standalone = false }: { standalone?: boolean }) {
   const { t } = useLanguage()
+  const home = standalone ? './' : '#top'
+  const anchor = (hash: string) => (standalone ? `./${hash}` : hash)
   const [isMenuOpen, setMenuOpen] = useState(false)
   const menuId = useId()
 
@@ -22,7 +25,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-ink/8 bg-paper/88 backdrop-blur-[10px]">
       <div className="flex flex-wrap items-center justify-between gap-x-[28px] gap-y-[10px] py-[14px]">
-        <a href="#top" onClick={() => setMenuOpen(false)}>
+        <a href={home} onClick={() => setMenuOpen(false)}>
           <Logo />
         </a>
 
@@ -30,7 +33,7 @@ export function Header() {
           {navigation.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={anchor(item.href)}
               className="transition-colors duration-200 hover:text-accent"
             >
               {t(item.label)}
@@ -75,7 +78,7 @@ export function Header() {
           {navigation.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={anchor(item.href)}
               onClick={() => setMenuOpen(false)}
               className="border-b border-ink/10 py-4 text-[17px] transition-colors duration-200 hover:text-accent"
             >
