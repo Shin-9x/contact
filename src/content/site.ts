@@ -10,8 +10,8 @@ export const company = {
   phoneHref: 'tel:+390918433088',
   address: ['Via Pio la Torre snc', '90044 Carini (Palermo)'],
   website: { label: 'contactsrl.net', href: 'https://contactsrl.net' },
+  email: 'contact@srl.net',
   facebook: {
-    label: 'Facebook',
     href: 'https://www.facebook.com/people/Contact-SRL/61554599708239/',
   },
   vat: 'P. IVA 06017960821',
@@ -220,13 +220,19 @@ export const paths = {
 
 export const contact = {
   title: {
-    it: 'Parliamone. Al telefono, ovviamente.',
-    en: "Let's talk. On the phone, obviously.",
+    it: 'Parliamone.\nAl telefono, ovviamente.',
+    en: "Let's talk.\nOn the phone, obviously.",
   } satisfies Localized,
   labels: {
     phone: { it: 'Telefono', en: 'Phone' } satisfies Localized,
     office: { it: 'Sede', en: 'Office' } satisfies Localized,
     online: { it: 'Online', en: 'Online' } satisfies Localized,
+  },
+  online: {
+    website: { it: 'Sito web', en: 'Website' } satisfies Localized,
+    email: { it: 'Email', en: 'Email' } satisfies Localized,
+    facebook: { it: 'Seguici su Facebook', en: 'Follow us on Facebook' } satisfies Localized,
+    newTab: { it: '(si apre in una nuova scheda)', en: '(opens in a new tab)' } satisfies Localized,
   },
 }
 

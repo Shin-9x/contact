@@ -30,7 +30,13 @@ export function Hero() {
               <span>{t(hero.primaryCta)}</span>
               <ArrowGlyph />
             </ButtonLink>
-            <ButtonLink href="#percorsi" variant="outline" size="lg" className="font-normal">
+            <ButtonLink
+              href="#candidatura"
+              onClick={() => selectType('candidate')}
+              variant="outline"
+              size="lg"
+              className="font-normal"
+            >
               <span>{t(hero.secondaryCta)}</span>
             </ButtonLink>
           </div>
