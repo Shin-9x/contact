@@ -60,6 +60,35 @@ pubblicazione va fatta verificare e vanno confermati la casella per le richieste
 degli interessati, i tempi di conservazione (sezione 07) e l'eventuale nomina di un
 DPO.
 
+## Sistema visivo
+
+**Pulsanti.** Tre ruoli, non cinque colori (`src/components/Button.tsx`):
+
+| Variante         | Quando si usa                                            | Aspetto                                      |
+|------------------|----------------------------------------------------------|----------------------------------------------|
+| `primary`        | l'unica azione che la sezione sta chiedendo              | blu pieno, testo bianco, su qualsiasi sfondo |
+| `secondary`      | l'alternativa accanto alla primaria, su superfici chiare | solo filetto, testo scuro                    |
+| `secondaryOnInk` | la stessa alternativa dentro la card scura               | filetto chiaro, testo chiaro                 |
+| `utility`        | non è una CTA: il pulsante telefono nella barra          | nero pieno, pallino lime                     |
+
+In hover il colore non cambia mai tinta: si scurisce e basta (più il sollevamento di
+1px condiviso da tutti). Il nero pieno resta riservato alla barra di navigazione e allo
+stato selezionato dei tab del form, così non entra in competizione con le CTA blu.
+Il lime è solo il segnale "linea attiva" del pulsante telefono, mai lo stato di un
+pulsante.
+
+**I due blu.** `--color-accent` (#0b8ecf) è il blu dei segni decorativi: filetti,
+barra di avanzamento, numeri delle soluzioni, anello di focus. `--color-accent-deep`
+(#0978ae) è il blu che porta testo: riempimento dei pulsanti primari, link attivi e
+hover, stati del form. Serve per il contrasto — bianco sul blu pieno 4,9:1 e blu su
+carta 4,7:1, entrambi oltre la soglia WCAG AA di 4,5:1, che il blu chiaro non
+raggiungeva. `--color-accent-deeper` è solo l'hover del riempimento.
+
+**Movimento.** Le animazioni di ingresso stanno in `components/Reveal.tsx` +
+`hooks/useReveal.ts`; parallasse, barra di avanzamento e voce di menu corrente hanno un
+hook ciascuno in `src/hooks/`. Tutto passa da `prefers-reduced-motion`: la garanzia è
+in `styles/index.css`, dove un unico blocco azzera durate e ritardi.
+
 ## Form contatti
 
 Il form (scheda *Azienda* / *Candidatura*) è completo: validazione lato client e lato

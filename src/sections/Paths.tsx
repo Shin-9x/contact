@@ -35,7 +35,7 @@ export function Paths() {
             <ButtonLink
               href="#contatti"
               onClick={() => selectType('business')}
-              variant="paper"
+              variant="primary"
               size="sm"
               className="relative mt-auto self-start"
             >
@@ -59,7 +59,7 @@ export function Paths() {
             <ButtonLink
               href="#candidatura"
               onClick={() => selectType('candidate')}
-              variant="outlineOnWhite"
+              variant="secondary"
               size="sm"
               className="mt-auto self-start"
             >

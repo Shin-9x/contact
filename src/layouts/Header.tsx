@@ -49,8 +49,8 @@ export function Header({ standalone = false }: { standalone?: boolean }) {
                 key={item.href}
                 href={anchor(item.href)}
                 aria-current={isCurrent ? 'location' : undefined}
-                className={`link-underline transition-colors duration-200 hover:text-accent ${
-                  isCurrent ? 'text-accent' : ''
+                className={`link-underline transition-colors duration-200 hover:text-accent-deep ${
+                  isCurrent ? 'text-accent-deep' : ''
                 }`}
               >
                 {t(item.label)}
@@ -107,8 +107,8 @@ export function Header({ standalone = false }: { standalone?: boolean }) {
                     href={anchor(item.href)}
                     onClick={() => setMenuOpen(false)}
                     aria-current={isCurrent ? 'location' : undefined}
-                    className={`border-b border-ink/10 py-4 text-[17px] transition-colors duration-200 hover:text-accent ${
-                      isCurrent ? 'text-accent' : ''
+                    className={`border-b border-ink/10 py-4 text-[17px] transition-colors duration-200 hover:text-accent-deep ${
+                      isCurrent ? 'text-accent-deep' : ''
                     }`}
                   >
                     {t(item.label)}

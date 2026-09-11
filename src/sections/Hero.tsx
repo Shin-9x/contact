@@ -33,7 +33,7 @@ export function Hero() {
               <ButtonLink
                 href="#contatti"
                 onClick={() => selectType('business')}
-                variant="accent"
+                variant="primary"
                 size="lg"
               >
                 <span>{t(hero.primaryCta)}</span>
@@ -42,7 +42,7 @@ export function Hero() {
               <ButtonLink
                 href="#candidatura"
                 onClick={() => selectType('candidate')}
-                variant="outline"
+                variant="secondary"
                 size="lg"
                 className="font-normal"
               >

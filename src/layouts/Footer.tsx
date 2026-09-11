@@ -7,7 +7,7 @@ export function Footer({ standalone = false }: { standalone?: boolean }) {
   const { t } = useLanguage()
 
   const linkClasses =
-    'link-underline font-mono text-[11px] tracking-[.14em] text-ink/50 uppercase transition-colors duration-200 hover:text-accent'
+    'link-underline font-mono text-[11px] tracking-[.14em] text-ink/50 uppercase transition-colors duration-200 hover:text-accent-deep'
 
   return (
     <footer className="flex flex-wrap items-end justify-between gap-6 border-t border-ink/10 pt-[clamp(40px,5vw,64px)] pb-10">

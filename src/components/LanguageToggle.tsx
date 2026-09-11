@@ -9,7 +9,7 @@ export function LanguageToggle({ className = '' }: { className?: string }) {
       type="button"
       onClick={toggleLanguage}
       aria-label={t(ui.switchLanguage)}
-      className={`cursor-pointer rounded-full border border-ink/18 px-3 py-2 font-mono text-[11px] tracking-[.1em] transition-colors duration-200 hover:border-accent hover:text-accent ${className}`}
+      className={`cursor-pointer rounded-full border border-ink/18 px-3 py-2 font-mono text-[11px] tracking-[.1em] transition-colors duration-200 hover:border-accent-deep hover:text-accent-deep ${className}`}
     >
       {language === 'en' ? 'IT' : 'EN'}
     </button>

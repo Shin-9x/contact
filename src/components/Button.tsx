@@ -1,14 +1,20 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
 
-export type ButtonVariant = 'accent' | 'ink' | 'paper' | 'outline' | 'outlineOnWhite'
+/*
+ * Three roles, not five colours:
+ *  - primary: the one action a section is asking for, blue on any surface;
+ *  - secondary: the alternative beside it, a hairline that borrows the page colour;
+ *  - utility: not a call to action at all — the contact chip in the top bar.
+ * Hover always deepens the same colour: no hue ever changes under the cursor.
+ */
+export type ButtonVariant = 'primary' | 'secondary' | 'secondaryOnInk' | 'utility'
 export type ButtonSize = 'lg' | 'md' | 'sm' | 'xs'
 
 const variantClasses: Record<ButtonVariant, string> = {
-  accent: 'bg-accent text-white hover:bg-ink',
-  ink: 'bg-ink text-paper hover:bg-accent hover:text-white',
-  paper: 'bg-paper text-ink hover:bg-lime',
-  outline: 'border border-ink/20 text-ink hover:border-ink hover:bg-white',
-  outlineOnWhite: 'border border-ink/20 text-ink hover:border-ink hover:bg-paper',
+  primary: 'bg-accent-deep text-white hover:bg-accent-deeper',
+  secondary: 'border border-ink/22 text-ink hover:border-ink/45 hover:bg-ink/5',
+  secondaryOnInk: 'border border-paper/30 text-paper hover:border-paper/60 hover:bg-paper/10',
+  utility: 'bg-ink text-paper hover:bg-ink-deep',
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -39,7 +45,7 @@ interface CommonProps {
 type ButtonLinkProps = CommonProps & AnchorHTMLAttributes<HTMLAnchorElement>
 
 export function ButtonLink({
-  variant = 'accent',
+  variant = 'primary',
   size = 'lg',
   className = '',
   children,
@@ -55,7 +61,7 @@ export function ButtonLink({
 type ButtonProps = CommonProps & ButtonHTMLAttributes<HTMLButtonElement>
 
 export function Button({
-  variant = 'accent',
+  variant = 'primary',
   size = 'lg',
   className = '',
   children,

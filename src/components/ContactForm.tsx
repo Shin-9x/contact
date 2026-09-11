@@ -248,7 +248,7 @@ export function ContactForm() {
       <div className="flex flex-col items-start">
         <Button
           type="submit"
-          variant="ink"
+          variant="primary"
           size="md"
           disabled={status === 'sending'}
           aria-describedby={statusId}
@@ -264,7 +264,7 @@ export function ContactForm() {
           role="status"
           aria-live="polite"
           className={`mt-3 text-[13.5px] leading-[1.5] empty:mt-0 ${
-            status === 'success' ? 'text-accent' : 'text-magenta'
+            status === 'success' ? 'text-accent-deep' : 'text-magenta'
           }`}
         >
           {/* Keyed so every new outcome fades in; the region itself never unmounts. */}
@@ -282,7 +282,7 @@ export function ContactForm() {
           href="./privacy.html"
           target="_blank"
           rel="noreferrer noopener"
-          className="underline underline-offset-2 transition-colors duration-200 hover:text-accent"
+          className="underline underline-offset-2 transition-colors duration-200 hover:text-accent-deep"
         >
           {t(form.privacyLink)}
         </a>

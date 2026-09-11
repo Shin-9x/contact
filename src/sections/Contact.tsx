@@ -10,10 +10,10 @@ const rowClasses =
   'grid grid-cols-[minmax(0,130px)_minmax(0,1fr)] gap-x-4 gap-y-1'
 const termBase = 'font-mono text-[10.5px] tracking-[.16em] text-ink/45 uppercase'
 const termClasses = `pt-[5px] ${termBase}`
-const linkClasses = 'transition-colors duration-200 hover:text-accent'
+const linkClasses = 'transition-colors duration-200 hover:text-accent-deep'
 
 const chipClasses =
-  'flex size-9 shrink-0 items-center justify-center rounded-full border border-ink/15 transition-colors duration-200 group-hover:border-accent group-hover:bg-accent group-hover:text-white'
+  'flex size-9 shrink-0 items-center justify-center rounded-full border border-ink/15 transition-colors duration-200 group-hover:border-accent-deep group-hover:bg-accent-deep group-hover:text-white'
 
 interface OnlineLinkProps {
   href: string
@@ -32,14 +32,14 @@ function OnlineLink({ href, icon, children, external = false, newTabNote }: Onli
     >
       {icon}
       <span className="min-w-0 [overflow-wrap:anywhere]">
-        <span className="underline decoration-ink/25 underline-offset-4 transition-colors duration-200 group-hover:text-accent group-hover:decoration-accent">
+        <span className="underline decoration-ink/25 underline-offset-4 transition-colors duration-200 group-hover:text-accent-deep group-hover:decoration-accent-deep">
           {children}
         </span>
         {external && (
           <>
             <span
               aria-hidden="true"
-              className="ml-2 inline-block font-mono text-[14px] text-ink/40 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
+              className="ml-2 inline-block font-mono text-[14px] text-ink/40 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent-deep"
             >
               ↗
             </span>

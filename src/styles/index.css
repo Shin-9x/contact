@@ -2,8 +2,14 @@
 
 /* Design tokens taken 1:1 from the Contact SRL design file. */
 @theme {
+  /* Bright accent: rules, marks and other decoration that carries no text.
+     Deep accent: anything a word sits on or is written in, so white labels on the
+     fill (4.9:1) and blue text on paper (4.7:1) both clear WCAG AA. */
   --color-accent: #0b8ecf;
+  --color-accent-deep: #0978ae;
+  --color-accent-deeper: #086491;
   --color-ink: #12161a;
+  --color-ink-deep: #05080a;
   --color-paper: #fbfbf9;
   --color-lime: #b6cc4e;
   --color-magenta: #e0479a;
