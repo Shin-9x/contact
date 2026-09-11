@@ -18,12 +18,12 @@ export function Logo({ size = 40, className = '' }: LogoProps) {
         alt=""
         width={size}
         height={size}
-        className="block object-contain"
+        className="block object-contain transition-transform duration-300 ease-soft group-hover/logo:scale-105"
         style={{ width: size, height: size }}
       />
       <span className="flex flex-col leading-none">
         <span className="text-[19px] font-bold tracking-[-.02em]">CONTACT</span>
-        <span className="mt-1 font-mono text-[9px] tracking-[.18em] text-ink/50 uppercase">
+        <span className="mt-1 font-mono text-[9px] tracking-[.18em] text-ink/50 uppercase transition-colors duration-300 group-hover/logo:text-accent">
           {t(company.tagline)}
         </span>
       </span>

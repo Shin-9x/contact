@@ -182,6 +182,7 @@ export const partner = {
     en: 'In collaboration with',
   } satisfies Localized,
   name: 'bofrost*',
+  href: 'https://www.bofrost.it/',
   body: {
     it: "Un marchio europeo sinonimo di qualità e fedeltà. Da oltre 30 anni la più grande realtà nella vendita diretta di specialità surgelate con consegna a domicilio, una realtà internazionale che condivide l'impegno dell'eccellenza qualitativa del prodotto e del servizio.",
     en: 'A European brand synonymous with quality and loyalty. For over 30 years the largest player in home delivery of frozen specialities, and an international operation that shares our commitment to courteous, professional and responsible service.',

@@ -10,10 +10,10 @@ export function Method() {
   return (
     <Section id="metodo" className="py-[clamp(56px,8vw,112px)]">
       <SectionSplit>
-        <SectionLabel as="h2">{t(method.index)}</SectionLabel>
+        <SectionLabel sticky as="h2">{t(method.index)}</SectionLabel>
         <SectionBody className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-x-10 gap-y-9">
-          {method.steps.map((step) => (
-            <Reveal key={step.letter}>
+          {method.steps.map((step, index) => (
+            <Reveal key={step.letter} delay={index * 60}>
               <span aria-hidden="true" className="font-mono text-[11px] text-ink/45">
                 {step.letter}
               </span>

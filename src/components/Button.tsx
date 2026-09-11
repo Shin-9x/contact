@@ -18,8 +18,12 @@ const sizeClasses: Record<ButtonSize, string> = {
   xs: 'px-5 py-[11px] text-[14px] font-medium',
 }
 
+/* The lift is suppressed on disabled buttons so the submit button stays put while sending. */
 const base =
-  'inline-flex cursor-pointer items-center gap-[10px] rounded-full transition-colors duration-200'
+  'group/btn inline-flex cursor-pointer items-center gap-[10px] rounded-full ' +
+  'transition-[background-color,color,border-color,box-shadow,translate] duration-200 ease-soft ' +
+  'hover:not-disabled:-translate-y-px hover:not-disabled:shadow-lift ' +
+  'active:not-disabled:translate-y-0 active:not-disabled:duration-75'
 
 function classesFor(variant: ButtonVariant, size: ButtonSize, className: string) {
   return `${base} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
@@ -68,7 +72,10 @@ export function Button({
 /** The mono arrow that trails most calls to action in the design. */
 export function ArrowGlyph() {
   return (
-    <span aria-hidden="true" className="font-mono">
+    <span
+      aria-hidden="true"
+      className="font-mono transition-transform duration-300 ease-soft group-hover/btn:translate-x-[3px]"
+    >
       →
     </span>
   )

@@ -17,6 +17,39 @@
   --radius-card: 8px;
 
   --ease-reveal: cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* Slower tail than --ease-reveal: for hover lifts and drawn lines. */
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows stay low-contrast and wide: the design is flat, these only lift. */
+  --shadow-lift: 0 16px 34px -26px rgb(18 22 26 / 0.45);
+  --shadow-card: 0 30px 60px -40px rgb(18 22 26 / 0.55);
+  --shadow-header: 0 10px 30px -24px rgb(18 22 26 / 0.5);
+
+  --animate-dot-pulse: dot-pulse 2.8s var(--ease-soft) infinite;
+  --animate-fade-up: fade-up 420ms var(--ease-soft) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes dot-pulse {
+    0% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    70%,
+    100% {
+      opacity: 0;
+      transform: scale(2.8);
+    }
+  }
 
   /* The design canvas is 1440px wide with a fluid 20px→64px gutter. */
   --spacing-shell: 1440px;
@@ -35,6 +68,12 @@
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Anchored targets stop below the sticky header instead of under it. This also
+     covers the form fields the validation focuses. */
+  [id] {
+    scroll-margin-top: 96px;
   }
 
   ::selection {
@@ -57,5 +96,65 @@
     html {
       scroll-behavior: auto;
     }
+
+    /* One guard for the whole site: nothing moves, everything still lands in its
+       final state (the reveal hook also skips straight to visible). */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+  }
+}
+
+/* An underline that draws in from the left on hover and retracts on leave. It stays
+   drawn on the link marked as current, which the header sets while scrolling. */
+@utility link-underline {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: -4px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 280ms var(--ease-soft);
+  }
+
+  &:hover::after,
+  &:focus-visible::after,
+  &[aria-current]::after {
+    transform: scaleX(1);
+  }
+}
+
+/*
+ * Scroll-linked drift, handed to the compositor: the element fades and lifts while it
+ * leaves the top of the screen. Native scroll timelines only — where they are missing
+ * the element simply stays as it is, which is why nothing essential depends on this.
+ */
+@utility scroll-exit-drift {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation-name: exit-drift;
+      animation-duration: auto;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 65%;
+    }
+  }
+}
+
+@keyframes exit-drift {
+  to {
+    opacity: 0.28;
+    transform: translateY(-28px);
   }
 }

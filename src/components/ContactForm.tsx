@@ -35,7 +35,7 @@ const issueMessages: Record<IssueCode, keyof typeof form.issues> = {
 }
 
 function tabClasses(isActive: boolean) {
-  return `min-w-0 flex-[1_1_0] cursor-pointer rounded-full border px-[14px] py-[10px] text-[13.5px] transition-colors duration-200 ${
+  return `min-w-0 flex-[1_1_0] cursor-pointer rounded-full border px-[14px] py-[10px] text-[13.5px] transition-[background-color,color,border-color,scale] duration-200 ease-soft active:scale-[.98] ${
     isActive ? 'border-transparent bg-ink text-paper' : 'border-ink/18 text-ink/70 hover:border-ink/40'
   }`
 }
@@ -147,7 +147,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="relative grid gap-5 rounded-card border border-ink/12 bg-white p-[clamp(24px,3vw,40px)]"
+      className="relative grid gap-5 rounded-card border border-ink/12 bg-white p-[clamp(24px,3vw,40px)] transition-[border-color,box-shadow] duration-400 ease-soft focus-within:border-ink/20 focus-within:shadow-card"
     >
       <div role="group" aria-label={t(form.typeLegend)} className="flex gap-2">
         <button
@@ -267,7 +267,12 @@ export function ContactForm() {
             status === 'success' ? 'text-accent' : 'text-magenta'
           }`}
         >
-          {statusMessage}
+          {/* Keyed so every new outcome fades in; the region itself never unmounts. */}
+          {statusMessage ? (
+            <span key={statusMessage} className="inline-block animate-fade-up">
+              {statusMessage}
+            </span>
+          ) : null}
         </p>
       </div>
 

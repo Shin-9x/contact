@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { ContactForm } from '../components/ContactForm'
+import { Reveal } from '../components/Reveal'
 import { FacebookIcon, GlobeIcon, MailIcon } from '../components/Icons'
 import { Section } from '../components/Section'
 import { company, contact } from '../content/site'
@@ -58,7 +59,7 @@ export function Contact() {
       {/* Second anchor of the same section: opens the form on the application tab. */}
       <span id="candidatura" aria-hidden="true" className="block" />
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] items-start gap-[clamp(40px,6vw,88px)]">
-        <div>
+        <Reveal>
           <h2
             id="contatti-title"
             className="text-[clamp(30px,3.8vw,52px)] leading-none font-medium tracking-[-.035em] whitespace-pre-line text-balance"
@@ -134,9 +135,11 @@ export function Contact() {
               </dd>
             </div>
           </dl>
-        </div>
+        </Reveal>
 
-        <ContactForm />
+        <Reveal delay={100}>
+          <ContactForm />
+        </Reveal>
       </div>
     </Section>
   )

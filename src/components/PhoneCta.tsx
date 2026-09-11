@@ -5,7 +5,10 @@ import { company } from '../content/site'
 export function PhoneCta({ size = 'xs', className = '' }: { size?: ButtonSize; className?: string }) {
   return (
     <ButtonLink href={company.phoneHref} variant="ink" size={size} className={className}>
-      <span aria-hidden="true" className="block size-1.5 rounded-full bg-lime" />
+      <span aria-hidden="true" className="relative block size-1.5">
+        <span className="absolute inset-0 rounded-full bg-lime" />
+        <span className="absolute inset-0 rounded-full bg-lime animate-dot-pulse" />
+      </span>
       <span>{company.phone}</span>
     </ButtonLink>
   )
