@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { ContactForm } from '../components/ContactForm'
 import { Reveal } from '../components/Reveal'
-import { FacebookIcon, GlobeIcon, MailIcon, PecIcon } from '../components/Icons'
+import { FacebookIcon, GlobeIcon, MailIcon, PecIcon, WhatsAppIcon } from '../components/Icons'
 import { Section } from '../components/Section'
 import { company, contact } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
@@ -76,6 +76,14 @@ export function Contact() {
               </dd>
             </div>
             <div className={`${rowClasses} border-b border-ink/10 pb-5`}>
+              <dt className={termClasses}>{t(contact.labels.mobile)}</dt>
+              <dd className="text-[21px] tracking-[-.01em]">
+                <a href={company.mobileHref} className={linkClasses}>
+                  {company.mobile}
+                </a>
+              </dd>
+            </div>
+            <div className={`${rowClasses} border-b border-ink/10 pb-5`}>
               <dt className={termClasses}>{t(contact.labels.office)}</dt>
               <dd className="text-[17px] leading-[1.5]">
                 {company.address[0]}
@@ -146,6 +154,23 @@ export function Contact() {
                       {t(contact.online.facebook)}
                     </OnlineLink>
                   </li>
+                  {company.whatsapp && (
+                    <li>
+                      <OnlineLink
+                        href={company.whatsappHref}
+                        external
+                        newTabNote={t(contact.online.newTab)}
+                        icon={
+                          // Same optical sizing as the Facebook logo above.
+                          <span className="flex size-9 shrink-0 items-center justify-center">
+                            <WhatsAppIcon className="size-[30px] transition-transform duration-200 group-hover:scale-110" />
+                          </span>
+                        }
+                      >
+                        {t(contact.online.whatsapp)}
+                      </OnlineLink>
+                    </li>
+                  )}
                 </ul>
               </dd>
             </div>

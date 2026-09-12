@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { siFacebook } from 'simple-icons'
+import { siFacebook, siWhatsapp } from 'simple-icons'
 
 interface IconProps {
   className?: string
@@ -57,5 +57,13 @@ export function PecIcon({ className }: IconProps) {
       <circle cx="18.5" cy="17.5" r="3.5" />
       <path d="m16.9 17.6 1.1 1.1 2.1-2.2" />
     </LineIcon>
+  )
+}
+
+export function WhatsAppIcon({ className }: IconProps) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill={`#${siWhatsapp.hex}`} className={className}>
+      <path d={siWhatsapp.path} />
+    </svg>
   )
 }

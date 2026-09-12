@@ -1,6 +1,7 @@
 import { useEffect, useId, useState } from 'react'
 import { Logo } from '../components/Logo'
 import { PhoneCta } from '../components/PhoneCta'
+import { WhatsAppCta } from '../components/WhatsAppCta'
 import { LanguageToggle } from '../components/LanguageToggle'
 import { navigation, ui } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
@@ -62,6 +63,9 @@ export function Header({ standalone = false }: { standalone?: boolean }) {
         <div className="hidden items-center gap-x-[14px] gap-y-[10px] lg:flex lg:flex-wrap">
           <LanguageToggle />
           <PhoneCta />
+          {/* Below xl the top bar is 7px short of room for a third chip; the mobile panel and
+              the contact section still offer WhatsApp there. */}
+          <WhatsAppCta className="max-xl:hidden" />
         </div>
 
         <button
@@ -119,6 +123,7 @@ export function Header({ standalone = false }: { standalone?: boolean }) {
             <div className="mt-6 flex flex-wrap items-center gap-x-[14px] gap-y-3">
               <LanguageToggle />
               <PhoneCta />
+              <WhatsAppCta />
             </div>
           </div>
         </div>
