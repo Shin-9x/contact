@@ -10,7 +10,8 @@ export const company = {
   phoneHref: 'tel:+390918433088',
   address: ['Via Pio la Torre snc', '90044 Carini (Palermo)'],
   website: { label: 'contactsrl.net', href: 'https://contactsrl.net' },
-  email: 'contact@srl.net',
+  email: 'info@contactsrl.net',
+  pec: 'contactsrl@cgn.legalmail.it',
   facebook: {
     href: 'https://www.facebook.com/people/Contact-SRL/61554599708239/',
   },
@@ -232,6 +233,7 @@ export const contact = {
   online: {
     website: { it: 'Sito web', en: 'Website' } satisfies Localized,
     email: { it: 'Email', en: 'Email' } satisfies Localized,
+    pec: { it: 'PEC', en: 'PEC' } satisfies Localized,
     facebook: { it: 'Seguici su Facebook', en: 'Follow us on Facebook' } satisfies Localized,
     newTab: { it: '(si apre in una nuova scheda)', en: '(opens in a new tab)' } satisfies Localized,
   },

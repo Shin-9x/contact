@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { ContactForm } from '../components/ContactForm'
 import { Reveal } from '../components/Reveal'
-import { FacebookIcon, GlobeIcon, MailIcon } from '../components/Icons'
+import { FacebookIcon, GlobeIcon, MailIcon, PecIcon } from '../components/Icons'
 import { Section } from '../components/Section'
 import { company, contact } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
@@ -112,6 +112,21 @@ export function Contact() {
                       >
                         <span className="sr-only">{t(contact.online.email)}: </span>
                         {company.email}
+                      </OnlineLink>
+                    </li>
+                  )}
+                  {company.pec && (
+                    <li>
+                      <OnlineLink
+                        href={`mailto:${company.pec}`}
+                        icon={
+                          <span className={chipClasses}>
+                            <PecIcon className="size-[18px]" />
+                          </span>
+                        }
+                      >
+                        <span className="sr-only">{t(contact.online.pec)}: </span>
+                        {company.pec}
                       </OnlineLink>
                     </li>
                   )}

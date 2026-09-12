@@ -48,3 +48,14 @@ export function FacebookIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+export function PecIcon({ className }: IconProps) {
+  return (
+    <LineIcon className={className}>
+      <path d="M13.5 16H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5.5" />
+      <path d="m3.5 6.5 7.5 5.25 7.5-5.25" />
+      <circle cx="18.5" cy="17.5" r="3.5" />
+      <path d="m16.9 17.6 1.1 1.1 2.1-2.2" />
+    </LineIcon>
+  )
+}

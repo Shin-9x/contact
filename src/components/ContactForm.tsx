@@ -278,6 +278,7 @@ export function ContactForm() {
 
       <p className="text-[12.5px] leading-[1.5] text-ink/50">
         {t(form.privacy)}{' '}
+        <br/>
         <a
           href="./privacy.html"
           target="_blank"
