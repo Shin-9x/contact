@@ -6,10 +6,12 @@ import { Section } from '../components/Section'
 import { company, contact } from '../content/site'
 import { useLanguage } from '../i18n/useLanguage'
 
+/* Phones stack the label above the value so links get the full width; from sm the
+   design's 130px label column returns. */
 const rowClasses =
-  'grid grid-cols-[minmax(0,130px)_minmax(0,1fr)] gap-x-4 gap-y-1'
+  'grid gap-y-2 sm:grid-cols-[minmax(0,130px)_minmax(0,1fr)] sm:gap-x-4 sm:gap-y-1'
 const termBase = 'font-mono text-[10.5px] tracking-[.16em] text-ink/45 uppercase'
-const termClasses = `pt-[5px] ${termBase}`
+const termClasses = `sm:pt-[5px] ${termBase}`
 const linkClasses = 'transition-colors duration-200 hover:text-accent-deep'
 
 const chipClasses =
@@ -37,9 +39,10 @@ function OnlineLink({ href, icon, children, external = false, newTabNote }: Onli
         </span>
         {external && (
           <>
+            {'\u00A0'}
             <span
               aria-hidden="true"
-              className="ml-2 inline-block font-mono text-[14px] text-ink/40 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent-deep"
+              className="inline-block font-mono text-[14px] text-ink/40 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent-deep"
             >
               ↗
             </span>
@@ -48,6 +51,19 @@ function OnlineLink({ href, icon, children, external = false, newTabNote }: Onli
         )}
       </span>
     </a>
+  )
+}
+
+/** Offers a line break before the @ so long addresses wrap at a natural point. */
+function BreakableEmail({ address }: { address: string }) {
+  const at = address.indexOf('@')
+  if (at < 0) return <>{address}</>
+  return (
+    <>
+      {address.slice(0, at)}
+      <wbr />
+      {address.slice(at)}
+    </>
   )
 }
 
@@ -92,7 +108,7 @@ export function Contact() {
               </dd>
             </div>
             <div className={rowClasses}>
-              <dt className={`pt-[12px] ${termBase}`}>{t(contact.labels.online)}</dt>
+              <dt className={`sm:pt-[12px] ${termBase}`}>{t(contact.labels.online)}</dt>
               <dd>
                 <ul className="grid gap-3">
                   <li>
@@ -119,7 +135,7 @@ export function Contact() {
                         }
                       >
                         <span className="sr-only">{t(contact.online.email)}: </span>
-                        {company.email}
+                        <BreakableEmail address={company.email} />
                       </OnlineLink>
                     </li>
                   )}
@@ -134,7 +150,7 @@ export function Contact() {
                         }
                       >
                         <span className="sr-only">{t(contact.online.pec)}: </span>
-                        {company.pec}
+                        <BreakableEmail address={company.pec} />
                       </OnlineLink>
                     </li>
                   )}

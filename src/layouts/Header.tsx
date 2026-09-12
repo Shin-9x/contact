@@ -120,10 +120,17 @@ export function Header({ standalone = false }: { standalone?: boolean }) {
                 )
               })}
             </nav>
-            <div className="mt-6 flex flex-wrap items-center gap-x-[14px] gap-y-3">
+            {/* Language sits in the list as one more row, so the two contact actions below can
+                take the full width: stacked on phones, side by side from sm. */}
+            <div className="flex items-center justify-between border-b border-ink/10 py-3">
+              <span className="font-mono text-[11px] tracking-[.16em] text-ink/45 uppercase">
+                {t(ui.language)}
+              </span>
               <LanguageToggle />
-              <PhoneCta />
-              <WhatsAppCta />
+            </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <PhoneCta size="md" className="w-full justify-center" />
+              <WhatsAppCta size="md" className="w-full justify-center" />
             </div>
           </div>
         </div>

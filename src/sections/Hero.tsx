@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { ArrowGlyph, ButtonLink } from '../components/Button'
 import { Reveal } from '../components/Reveal'
 import { hero } from '../content/site'
@@ -14,8 +15,21 @@ export function Hero() {
         <div className="min-w-0 flex-[1_1_min(100%,480px)]">
           {/* Above the fold, so these reveal on load: same transition, staggered by 80ms. */}
           <Reveal>
-            <p className="mb-[clamp(20px,3vw,36px)] font-mono text-[clamp(10px,1.1vw,11.5px)] tracking-[.18em] text-ink/45 uppercase">
-              {t(hero.eyebrow)}
+            {/* Each "—" segment is kept whole and the lines are balanced, so on phones the line
+                breaks at a separator instead of stranding "2010" on its own. */}
+            <p className="mb-[clamp(20px,3vw,36px)] font-mono text-[clamp(10px,1.1vw,11.5px)] tracking-[.18em] text-balance text-ink/45 uppercase">
+              {t(hero.eyebrow)
+                .split(' — ')
+                .map((segment, index, segments) => (
+                  <Fragment key={segment}>
+                    <span className="whitespace-nowrap">
+                      {segment}
+                      {index < segments.length - 1 && ' —'}
+                    </span>
+                    {/* The breakable space lives outside the nowrap span. */}
+                    {index < segments.length - 1 && ' '}
+                  </Fragment>
+                ))}
             </p>
           </Reveal>
           <Reveal delay={60} duration={560}>

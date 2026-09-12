@@ -337,6 +337,7 @@ export const meta = {
 export const ui = {
   mainMenu: { it: 'Menu principale', en: 'Main menu' } satisfies Localized,
   mobileMenu: { it: 'Menu', en: 'Menu' } satisfies Localized,
+  language: { it: 'Lingua', en: 'Language' } satisfies Localized,
   openMenu: { it: 'Apri il menu', en: 'Open menu' } satisfies Localized,
   closeMenu: { it: 'Chiudi il menu', en: 'Close menu' } satisfies Localized,
   switchLanguage: {
